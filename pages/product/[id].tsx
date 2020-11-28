@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
-
+import Navbar from '../../components/Navbar/Navbar'
 const ProductPage = () => {
   const { query } = useRouter()
   const {id} = query 
@@ -17,6 +17,7 @@ const ProductPage = () => {
   
   return (
     <section>
+      <Navbar/>
       <h1>{avo.name} <small style={{fontSize:'small'}}> SKU:{avo.sku}</small></h1>
       <p>
         {avo.attributes && avo.attributes.description}
