@@ -7,6 +7,6 @@ ENV COMMAND $COMMAND
 
 COPY package.json package.json
 
-RUN yarn install
+RUN npm install
 
-CMD yarn $COMMAND
+CMD npm run $COMMAND
