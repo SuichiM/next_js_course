@@ -15,7 +15,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <Navbar />
       <div>Platzi and Next.js!</div>
       <ul>
         {productList.map((product) => (

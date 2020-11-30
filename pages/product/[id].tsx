@@ -17,7 +17,6 @@ const ProductPage = () => {
   
   return (
     <section>
-      <Navbar/>
       <h1>{avo.name} <small style={{fontSize:'small'}}> SKU:{avo.sku}</small></h1>
       <p>
         {avo.attributes && avo.attributes.description}
