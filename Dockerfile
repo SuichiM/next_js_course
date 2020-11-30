@@ -9,4 +9,5 @@ COPY package.json package.json
 
 RUN npm install
 
-CMD npm run $COMMAND
+# CMD npm run $COMMAND
+ENTRYPOINT ["tail", "-f", "/dev/null"]

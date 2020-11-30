@@ -6,7 +6,7 @@ services:
     container_name: next_app
     volumes:
       - .:/home/app
-      - /home/app/node_modules
+#      - /home/app/node_modules
     ports: 
       - 3000:3000
       - 9229:9229
