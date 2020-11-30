@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Segment, Container, Grid, List, Header } from 'semantic-ui-react'
+import { Segment, Container, Grid, List, Header, Icon } from 'semantic-ui-react'
 
 const Footer = () => (
   <Segment
@@ -36,28 +36,21 @@ const Footer = () => (
             </List>
           </Grid.Column>
           <Grid.Column width={7}>
-            <Header as="h4">Hecho para</Header>
-            <p>
-              <a href="https://platzi.com/">Platzi y su curso de Next.JS</a> de
-              Platzi dictado por{' '}
-              <a href="https://twitter.com/jonalvarezz">@jonalvarezz</a>
-            </p>
-            <List horizontal style={{ display: 'flex' }}>
-              <List.Item
-                icon="twitter"
-                style={{ display: 'flex' }}
-                content={<a href="https://twitter.com/jonalvarezz">Twitter</a>}
-              />
-              <List.Item
-                icon="github"
-                style={{ display: 'flex' }}
-                content={
-                  <a href="https://github.com/jonalvarezz/platzi-nextjs">
-                    GitHub
-                  </a>
-                }
-              />
-            </List>
+            <div >
+            <Header as="h4" floated='right'>
+              Hecho por: <a href="https://twitter.com/SuichiM">@SuichiM</a>{' '}
+              <a href="https://github.com/SuichiM/next_js_course">
+                <Icon name="github" size="big"/>
+              </a>
+           </Header>
+           <Header as="h6" floated='right'>
+              Forked from:{' '}
+              <a href="https://twitter.com/jonalvarezz">@jonalvarezz</a>{' '}
+              <a href="https://github.com/jonalvarezz/platzi-nextjs">
+                <Icon name="github" size="big"/>
+              </a>
+            </Header>
+            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>
