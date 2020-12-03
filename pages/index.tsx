@@ -3,7 +3,7 @@ import Layout from '@components/Layout/Layout'
 import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import ProductList from '@components/ProductList/ProductList'
 
-const URL = process.env.VERCEL_URL
+const URL = process.env.VERCEL_URL || 'https://avo-suichim-store.vercel.app/'
 
 export const getServerSideProps = async ()=>{
 
