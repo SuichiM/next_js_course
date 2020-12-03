@@ -8,6 +8,7 @@ const URL = process.env.VERCEL_URL
 export const getServerSideProps = async ()=>{
 
   const response = await fetch(`${URL}/api/avo`)
+
   const {data:productList}:TAPIAvoResponse = await response.json()
   return{
     props:{
