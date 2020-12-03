@@ -36,7 +36,7 @@ const KawaiiHeader = () => {
           onComplete={() => setCount((prevCount) => prevCount + 1)}
         />
       )}
-
+    
       <Confirm
         open={modalOpen}
         content={ModalHeaderContent}
