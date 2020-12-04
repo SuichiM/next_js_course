@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-
 import Layout from '@components/Layout/Layout'
 import ProductSummary from '@components/ProductSummary/ProductSummary'
+import { GetStaticProps } from 'next'
 
-const ProductPage = () => {
-  const { query } = useRouter()
-  const [product, setProduct] = useState<TProduct | null>(null)
+const PROTOCOL = process.env.PROTOCOL
+const URL = process.env.BKND_URL
 
-  useEffect(() => {
-    if (query.id) {
-      window
-        .fetch(`/api/avo/${query.id}`)
-        .then((response) => response.json())
-        .then((data: TProduct) => {
-          setProduct(data)
-        })
-    }
-  }, [query.id])
+export const getStaticPaths = async () => {
+  const response = await fetch(`${PROTOCOL}${URL}/api/avo`)
+  const { data: productList }: TAPIAvoResponse = await response.json()
+  const paths = productList.map(({ id }) => ({ params: { id } }))
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // const { query } = useRouter()
+  const id = params?.id as string
+
+  const response = await fetch(`${PROTOCOL}${URL}/api/avo/${id}`)
+
+  const product: TProduct = await response.json()
+
+  return {
+    props: {
+      product,
+    },
+  }
+}
+
+const ProductPage = ({ product }: { product: TProduct }) => {
   return (
     <Layout>
       {product == null ? null : <ProductSummary product={product} />}

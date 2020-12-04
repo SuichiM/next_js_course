@@ -10,6 +10,8 @@
     "dev:inspect": "NODE_OPTIONS='--inspect' next",
     "dev": "next",
     "build": "next build",
+    "build:prod": "NODE_ENV=production next build",
+    "export": "next export",
     "start": "next start",
     "type-check": "tsc --noEmit"
   },
